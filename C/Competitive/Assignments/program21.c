@@ -1,24 +1,15 @@
-// 
-//          
-//
-//
-//
-//
-///
-
-
 /******************************************************************************
  *
  *  Program Name : Multiplication of Factors
  *  File Name    : multiplication_of_factors.c
  *
- *  Description  :  Write the program which accept the number and displsy factor in decreasing Order
+ *  Description  :  write program from the user and print diff of summation of factor and nonfactor
  *
  *  Input        :
  *      Integer number from the user
  *
  *  Output       :
- *      Factors of the number and their multiplication with decreasing order
+ *      NonFactor of number
  *
  *  Author       : Sahil Shaikh
  *  Date         : 31/05/2026
@@ -29,31 +20,40 @@
 #include<stdio.h>
 
 
-void  Factor(int iNo)
+int  NonFactorSum(int iNo)
 {
        int iCnt =0;
-       int iMul = 1;
+       int iFactSum = 0;
+       int iNonFactSum = 0;
 
-       for( iCnt =iNo/2; iCnt>=1 ; iCnt)
+       for( iCnt =1; iCnt<=iNo /2; iCnt++)
        {
               if( iNo %iCnt ==0)
               {
-                             printf("%d ",iCnt);
+                     
+                             iFactSum = iFactSum + iCnt ;
+              }
+              else 
+              {      
+                     iNonFactSum = iNonFactSum + iCnt ;
+
               }
        }
+       return  iFactSum- iNonFactSum;     
        
 }
 int main()
 {
-       int iVlaue = 0 ;
+       int iValue = 0 ;
        int iRet = 0;
        
        printf("Enter the Number : ");
-       scanf("%d", &iVlaue);
+       scanf("%d", &iValue);
 
-       Factor(iVlaue);
+        iRet = NonFactorSum(iValue);
 
-       // printf("Multiplication of Factor :%d " , iRet);
+
+       printf("Difference of Fact and NonFact :%d " , iRet);
 
 
        return 0 ;

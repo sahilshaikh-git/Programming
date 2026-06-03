@@ -1,12 +1,3 @@
-// 
-//          
-//
-//
-//
-//
-///
-
-
 /******************************************************************************
  *
  *  Program Name : Multiplication of Factors
@@ -18,7 +9,7 @@
  *      Integer number from the user
  *
  *  Output       :
- *      Factors of the number and their multiplication with decreasing order
+ *      NonFactor of number
  *
  *  Author       : Sahil Shaikh
  *  Date         : 31/05/2026
@@ -29,15 +20,16 @@
 #include<stdio.h>
 
 
-void  Factor(int iNo)
+void  NonFactor(int iNo)
 {
        int iCnt =0;
        int iMul = 1;
 
-       for( iCnt =iNo/2; iCnt>=1 ; iCnt)
+       for( iCnt =1; iCnt<=iNo ; iCnt++)
        {
-              if( iNo %iCnt ==0)
+              if( iNo %iCnt !=0)
               {
+                     
                              printf("%d ",iCnt);
               }
        }
@@ -51,7 +43,7 @@ int main()
        printf("Enter the Number : ");
        scanf("%d", &iVlaue);
 
-       Factor(iVlaue);
+       NonFactor(iVlaue);
 
        // printf("Multiplication of Factor :%d " , iRet);
 
