@@ -1,4 +1,4 @@
-//  15 4> Accept N numbers from the users and input start poin and end point &,display all elements from the range
+//  15 4> Accept N numbers from the users and input start point and end point &,display all elements from the range
 
 #include<stdio.h>
 #include<stdlib.h>
