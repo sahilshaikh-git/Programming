@@ -2,7 +2,7 @@
 //
 //            Logic Building Assignment 17
 //            
-//            4 .  write program to print the multiplication of table
+//            5 .  write program to print the multiplication of table
 //
 //
 //
