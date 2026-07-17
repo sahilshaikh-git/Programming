@@ -6,11 +6,12 @@
 //          iCol = 4
 //     
 //          Output:
-//                  
-//             1    2   3   4
-//             5  6  7    8
-//             9  1   2    3 
-//             4  5  6    7
+//                 
+//            1   2   3  4  5
+//            2  3  4  5  6
+//            3  4  5  6  7
+//            4  5  6  7  8
+//            5  6  7  8  9
 //                    
 ////////////////////////////////////////////////
 
@@ -21,32 +22,29 @@ void Pattern (int iNo1 , int iNo2)
        
         int i  = 0 ;
         int j =0; 
-        int no = 1 ;
+        
+
     
 
         for( i =1; i<= iNo1;  i++ )
         {
-            
            
-            for( j =1 ; j<= iNo2; j++)
-            {
-              if(no<=9)
-              {
-              printf("%d\t" , no);
-              no++ ;
-              }
-              if( no ==10)
-              {
-                no=1 ;
-              }
            
-            
-            
+          {
+                for( j=1 ; j<= iNo2 ; j++)
+                {
+                    printf("%d\t", i);
+                }
+                printf("\n");
           }
-          printf("\n");
-
+        
+       
+                    
+        }
+            
+           
+        
 }
-} 
 int main()
 {
        int iValue1 = 0 , iValue2 = 0 ;

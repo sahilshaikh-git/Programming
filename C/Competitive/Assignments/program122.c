@@ -7,10 +7,12 @@
 //     
 //          Output:
 //                  
-//             1    2   3   4
-//             5  6  7    8
-//             9  1   2    3 
-//             4  5  6    7
+//             2  4 6 8 10
+//             1   3 5 7  9
+//             2  4 6 8 10
+//             1   3 5 7  9
+//             
+//             
 //                    
 ////////////////////////////////////////////////
 
@@ -26,27 +28,32 @@ void Pattern (int iNo1 , int iNo2)
 
         for( i =1; i<= iNo1;  i++ )
         {
-            
-           
-            for( j =1 ; j<= iNo2; j++)
+            if(i%2!=0)
             {
-              if(no<=9)
-              {
-              printf("%d\t" , no);
-              no++ ;
-              }
-              if( no ==10)
-              {
-                no=1 ;
-              }
-           
-            
-            
-          }
-          printf("\n");
+                  for( j =1 ; j<= iNo2; j++)
+                    {
+                            printf("%d\t", j*2);
+                    }
+                    printf("\n");
+            }   
+            else
+            {
+                   for( j =1 ; j<= iNo2; j++)
+                    {
 
+                             
+                            printf("%d\t", (j*2)-1);
+                         
+                          
+                    }
+                    printf("\n");
+            }
+                    
+        }
+            
+           
+        
 }
-} 
 int main()
 {
        int iValue1 = 0 , iValue2 = 0 ;
