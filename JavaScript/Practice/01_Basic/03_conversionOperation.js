@@ -29,12 +29,30 @@ let isLoggedin =  "true";
 
 let  isBoolean = Boolean(isLoggedin);
 
-console.log(typeof (isBoolean));
-console.log(isBoolean);
+// console.log(typeof (isBoolean));
+// console.log(isBoolean);
 
 
 let num = " 33 ";
 
 let toString  =  String(num);
 
-console.log( typeof toString);
+// console.log( typeof toString);
+
+
+// ********************** Operation in javascript ******************************
+
+let value = 3 ; 
+
+let negval = -value ; 
+
+// console.log(negval);
+
+
+str1 =  "Hello" ;
+
+str2 = "  Hitesh";
+
+str3 =  str1 + str2 ;
+console.log(str3);
+

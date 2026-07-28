@@ -1,0 +1,81 @@
+// primitive Datatype 
+
+// number ,  string ,  null , undefined , boolean ,  bigint => call by value
+
+
+// non primitive / reference datatype 
+
+const num = 23 ;
+console.log(typeof (num));
+
+// interger=> number type
+
+
+const floatnum= 23.2;
+console.log(typeof (floatnumnum));
+// float => undefined 
+
+const BigNum = 13213165600646444n ;
+console.log(typeof(BigNum));
+
+
+const str1 = Symbol('abc');
+const str2 = Symbol('abc');
+
+console.log(str1 == str2);
+
+const strName = "sahil";
+
+console.log(typeof strName)
+
+
+const demofun = function(){
+       console.log("Hello react i am comming");
+}
+
+console.log(demofun);
+
+demofun();
+
+const DemoObject = 
+{
+       name : "sahil" ,
+       age : 21 
+}
+
+console.log(DemoObject);
+console.log(typeof DemoObject);
+
+
+const  hero =["shaktiman" , "ironan" , " spiderman"] ; 
+
+console.log(hero);
+console.log( typeof hero);
+
+
+const checkvar = undefined
+console.log(typeof checkvar);
+
+ 
+/*
+primitive : 
+interger => Number
+float => undefined
+bigNumber = bigint
+string = string
+null = object 
+undefined = undefined
+
+
+for the reference object s
+
+array => object
+function => function object
+object => object
+
+
+
+javascript dynamiically type lang because is assign the varible datatype autonatically
+
+datatype is determine at run time  
+*/
