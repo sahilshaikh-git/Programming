@@ -1,9 +1,9 @@
-//  assignent 27 1   Accept number of rows and number of columns from user and display below pattern.
+//  assignent 28 2   Accept number of rows and number of columns from user and display below pattern.
 //
-//           1 234
-//            234
-//              34    
-//                4
+//         * * * #
+//         * * #@
+//         * # @ @              
+//         # @ @ @
 //        
 
 #include<stdio.h>
@@ -18,25 +18,24 @@ void Pattern ( int iRow  , int iCol)
        for( i =1  ; i <=iRow ; i++ )
        {
               
-                   for( j=1 ; j<=iCol; j++ )
+                        for( j=iCol ; j>=1; j-- )
                {
+
+               
                     
 
-                 if(i>j)
+                 if(i==j)
                  {
-                     printf(" ");
+                     printf(" # ");
                  }
-                 else
-                 {
-                     printf("%d", j);     
-                 }
-                     
-                           
-                     
-
-                     
-                   
-
+                 else  if(j>i)
+                {
+                    printf(" * ");  
+                }
+                else
+                {
+                     printf(" @ ");     
+                } 
       
                }
 
