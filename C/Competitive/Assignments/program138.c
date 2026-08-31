@@ -1,4 +1,4 @@
-//  assignent 28 2   Accept number of rows and number of columns from user and display below pattern.
+//  assignent 28 3   Accept number of rows and number of columns from user and display below pattern.
 //
 //        * *   *   *   *   *
 //        *                *   *
