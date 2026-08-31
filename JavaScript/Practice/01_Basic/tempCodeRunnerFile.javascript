@@ -1,1 +1,2 @@
-const demoArray ['shaktiman' , "ironman"]; 
+console.log(firstuser);
+// console.log(anotheruser);

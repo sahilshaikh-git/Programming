@@ -1,28 +1,184 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>URL-Shortner</title>
-       <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TinyLink | URL Shortener</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-       <div class="nav-bar">
-              <h3>TinyLink</h3>
-              <div class="main-menu">
-                     <span class="menuBtn" onclick="openMenu()">&#9776</span>
 
-                     <span class="closeBtn" onclick="closeMenu()">&#9746;</span>
-                     <ul  id="menu">
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Service</li>
-                            <li>Blogs</li>
-                            <li>Contact </li>
-                     </ul>
-              </div>
-       </div>
+    <!-- NAVBAR -->
+    <nav class="nav-bar">
 
-       <script src="app.js"></script>
+        <div class="logo">
+            <span>●</span> TinyLink
+        </div>
+
+        <div class="main-menu">
+
+            <span class="menuBtn" onclick="openMenu()">&#9776;</span>
+
+            <span class="closeBtn" onclick="closeMenu()">&#9746;</span>
+
+            <ul id="menu">
+                <li>Home</li>
+                <li>About</li>
+                <li>Service</li>
+                <li>Blogs</li>
+                <li>Contact</li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="small-title">
+                    SIMPLE • FAST • SMART
+                </div>
+
+                <h1>
+                    Turn your long URLs
+                    <br>
+                    into <span>tiny links.</span>
+                </h1>
+
+                <p>
+                    Create clean, simple and shareable links
+                    in just a few seconds.
+                </p>
+
+
+                <!-- URL INPUT -->
+
+                <div class="url-container">
+
+                    <div class="input-wrapper">
+
+                        <span class="link-icon">↗</span>
+
+                        <input
+                            type="url"
+                            id="urlInput"
+                            placeholder="Paste your long URL here..."
+                        >
+
+                    </div>
+
+                    <button id="shortenBtn">
+                        Shorten
+                    </button>
+
+                </div>
+
+
+                <!-- ERROR -->
+
+                <p id="errorMessage"></p>
+
+
+                <!-- RESULT -->
+
+                <div class="result-box" id="resultBox">
+
+                    <div>
+                        <small>Your shortened link</small>
+
+                        <input
+                            type="text"
+                            id="shortUrl"
+                            readonly
+                        >
+                    </div>
+
+                    <button id="copyBtn">
+                        Copy
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="features">
+
+            <p class="section-label">WHY TINYLINK</p>
+
+            <h2>
+                Everything you need,
+                <span>nothing you don't.</span>
+            </h2>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+
+                    <div class="icon">✦</div>
+
+                    <h3>Quick & Easy</h3>
+
+                    <p>
+                        Shorten any URL in seconds
+                        with a simple click.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="icon">↗</div>
+
+                    <h3>Easy to Share</h3>
+
+                    <p>
+                        Clean and memorable links
+                        that are easy to share.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="icon">⌁</div>
+
+                    <h3>Mobile Friendly</h3>
+
+                    <p>
+                        Designed to work beautifully
+                        on every device.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
 </body>
+
 </html>
