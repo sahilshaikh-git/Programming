@@ -15,8 +15,7 @@ typedef  int BOOL  ;
 
 void Display( char ch )
 {
-     
-
+     printf("Decimal :%d\tHexadecimal : %X\tOctal: %o", ch ,ch ,ch  );
 }
 
 int main()
@@ -27,7 +26,7 @@ int main()
     printf("Enter the Charater : ");
     scanf("%c" , & cValue );
 
-     (cValue);
+     Display(cValue);
     
 
     return 0;
