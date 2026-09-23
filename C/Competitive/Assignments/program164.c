@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 //    
 //      Assignment No  : 32
-//       3) Write the program which accept the string from the user and accept one character
+//       4) Write the program which accept the string from the user and accept one character
 //       return last occurence of the character
 //
 //////////////////////////////////////////////////////////////////////////////////
