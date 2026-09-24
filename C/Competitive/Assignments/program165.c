@@ -8,25 +8,26 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
-#include<stdlib.h>
 
-
-typedef int BOOL ;
-#define TRUE 1 
-#define FALSE 0 
-
-int RevStr(char str [])
+void RevStr(char * str )
 {
-       char *first ;
-       char *end;
+     char *start =  NULL ;
 
-       first = str ;
-       
-       for ( int i =0 ; str[i]!='\0'; i++)
-       {
-              printf( "%c" ,str[i]);
-       }
-       
+     start = str ;
+
+     while(*str != '\0')
+     {
+              str++ ;
+     }
+     str-- ;
+
+     while(start <=  str )
+     {
+            printf("%c" , *str);
+            str-- ;
+     }
+     
+
 }
 int main()
 {
