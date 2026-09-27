@@ -8,18 +8,32 @@ import { useState } from "react" ;
 export default function Home() {
   
          const [url , setUrl] = useState("");
+         const [ shortUrl , setShortUrl] =useState("");
 
-         const Character =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+         const characters =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 
+         
+       
+         function shortenurl () 
+          {
+            if(url ==="")
+            {
+              console.log("Please enter a URL ");
+              
+              return ;
+            }
          let shortCode = "";
-
          let i =1 ;
-
          while(i<= 6)
          {
-                  shortCode.push(Character[Math.floor(Math.random()* Character.length)]);
+                  shortCode = shortCode +(characters[Math.floor(Math.random() * characters.length)]);
                   i++ ;
          }
+
+         setShortUrl(shortCode);
+
+         }
+
 
   return (
 
@@ -33,7 +47,8 @@ export default function Home() {
 
                       />
 
-                      <button  onClick={()=> console.log(url)}>Shorten URL</button>
+                      <button  onClick={shortenurl}>Shorten URL</button>
+                      <p>{shortUrl}</p>
             </div>
   
 
