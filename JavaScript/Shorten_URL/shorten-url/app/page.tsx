@@ -2,7 +2,7 @@
 "use client";
 
 
-import { use, useState } from "react" ;
+import { useState } from "react" ;
 
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
          const [url , setUrl] = useState("");
          const [ shortUrl , setShortUrl] =useState("");
          const [error ,setError] = useState("");
+         const[ copied , setCopied] = useState(false);
 
          const characters =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 
@@ -21,19 +22,33 @@ export default function Home() {
             if(url ==="")
             {
               setError("Please enter a URL ");
+              setShortUrl("");
               
               return ;
             }
 
+          
             try
             {
               const validUrl = new URL(url);
-              setError("");
+
+              if( validUrl.protocol !== "http:" && validUrl.protocol !== "https:" )
+              {
+
+                setError("Only https and http are allowed");
+                setShortUrl("");
+                return ;
+
+              }
+
+                setError("");
 
             }
             catch
             {
               setError("Invalid URL");
+              setShortUrl("");
+
               return ;
             }
 
@@ -48,7 +63,28 @@ export default function Home() {
 
          setShortUrl(shortCode);
 
+        
+
          }
+
+          function copyUrl() {
+
+         if (shortUrl === "") {
+        return;
+        }
+
+        const fullUrl =  "https://localhost:3000"+ shortUrl ;
+
+        navigator.clipboard.writeText(fullUrl)
+        .then(() => {
+         console.log("Copied successfully");
+          setCopied(true);
+          })
+          .catch((error) => {
+      console.log("Copy failed");
+      console.log(error);
+    });
+}
 
 
   return (
@@ -65,7 +101,8 @@ export default function Home() {
                       <p>{error}</p>
 
                       <button  onClick={shortenurl}>Shorten URL</button>
-                      <p>{shortUrl}</p>
+                      {shortUrl && (<p>http://localhost:3000/{shortUrl}</p>)}
+                       { shortUrl && ( <button onClick={copyUrl}>{copied ? "copied !!": "copy"}</button> )}
             </div>
   
 
