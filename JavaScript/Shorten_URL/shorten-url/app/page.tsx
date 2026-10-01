@@ -1,9 +1,6 @@
-
 "use client";
 
-
 import { useState } from "react" ;
-
 
 export default function Home() {
   
@@ -15,7 +12,6 @@ export default function Home() {
          const characters =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 
          
-       
          function shortenurl () 
           {
 
