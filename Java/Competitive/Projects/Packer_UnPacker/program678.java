@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class program677
+class program678
 {
     public static void main(String A[]) throws Exception
     {

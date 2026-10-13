@@ -1,0 +1,18 @@
+///////////////////////////////////////////////////////////////////////////
+//
+//     Assignment 22 1. Accept number from user and display below pattern.
+//
+//
+//
+////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+
+class Program106
+{
+       public static void main(String[] args)
+       {
+              
+              
+       }
+}

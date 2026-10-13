@@ -1,108 +1,111 @@
 "use client";
 
-import { useState } from "react" ;
+import { useState } from "react";
 
 export default function Home() {
-  
-         const [url , setUrl] = useState("");
-         const [ shortUrl , setShortUrl] =useState("");
-         const [error ,setError] = useState("");
-         const[ copied , setCopied] = useState(false);
+  const [url, setUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("");
+  const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
 
-         const characters =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
 
-         
-         function shortenurl () 
-          {
+  async function shortenurl() {
+    if (url === "") {
+      setError("Please enter a URL");
+      setShortUrl("");
+      return;
+    }
 
-            if(url ==="")
-            {
-              setError("Please enter a URL ");
-              setShortUrl("");
-              
-              return ;
-            }
+    try {
+      const validUrl = new URL(url);
 
-          
-            try
-            {
-              const validUrl = new URL(url);
-
-              if( validUrl.protocol !== "http:" && validUrl.protocol !== "https:" )
-              {
-
-                setError("Only https and http are allowed");
-                setShortUrl("");
-                return ;
-
-              }
-
-                setError("");
-
-            }
-            catch
-            {
-              setError("Invalid URL");
-              setShortUrl("");
-
-              return ;
-            }
-
-
-         let shortCode = "";
-         let i =1 ;
-         while(i<= 6)
-         {
-                  shortCode = shortCode +(characters[Math.floor(Math.random() * characters.length)]);
-                  i++ ;
-         }
-
-         setShortUrl(shortCode);
-
-        
-
-         }
-
-          function copyUrl() {
-
-         if (shortUrl === "") {
+      if (
+        validUrl.protocol !== "http:" &&
+        validUrl.protocol !== "https:"
+      ) {
+        setError("Only https and http are allowed");
+        setShortUrl("");
         return;
-        }
+      }
 
-        const fullUrl =  "https://localhost:3000"+ shortUrl ;
+      setError("");
+    } catch {
+      setError("Invalid URL");
+      setShortUrl("");
+      return;
+    }
 
-        navigator.clipboard.writeText(fullUrl)
-        .then(() => {
-         console.log("Copied successfully");
-          setCopied(true);
-          })
-          .catch((error) => {
-      console.log("Copy failed");
-      console.log(error);
+    let shortCode = "";
+    let i = 1;
+
+    while (i <= 6) {
+      shortCode =
+        shortCode +
+        characters[Math.floor(Math.random() * characters.length)];
+
+      i++;
+    }
+
+    const response = await fetch("/api/shorten", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        originalUrl: url,
+        shortCode: shortCode,
+      }),
     });
-}
 
+    const data = await response.json();
+
+    setShortUrl(shortCode);
+  }
+
+  function copyUrl() {
+    if (shortUrl === "") {
+      return;
+    }
+
+    const fullUrl = "http://localhost:3000/" + shortUrl;
+
+    navigator.clipboard
+      .writeText(fullUrl)
+      .then(() => {
+        console.log("Copied successfully");
+        setCopied(true);
+      })
+      .catch((error) => {
+        console.log("Copy failed");
+        console.log(error);
+      });
+  }
 
   return (
+    <div>
+      <h1>Shorten URL</h1>
 
-            <div>
-                    <h1>Shorten URL</h1>
+      <input
+        type="text"
+        placeholder="Enter your long URL"
+        onChange={(e) => setUrl(e.target.value)}
+      />
 
-                     <input
-                      type="text" 
-                      placeholder="Enter your long URL"
-                      onChange={(e)=>setUrl(e.target.value)}
+      <p>{error}</p>
 
-                      />
-                      <p>{error}</p>
+      <button onClick={shortenurl}>Shorten URL</button>
 
-                      <button  onClick={shortenurl}>Shorten URL</button>
-                      {shortUrl && (<p>http://localhost:3000/{shortUrl}</p>)}
-                       { shortUrl && ( <button onClick={copyUrl}>{copied ? "copied !!": "copy"}</button> )}
-            </div>
-  
+      {shortUrl && (
+        <>
+          <p>http://localhost:3000/{shortUrl}</p>
 
-
-
+          <button onClick={copyUrl}>
+            {copied ? "✓ Copied!" : "Copy"}
+          </button>
+        </>
+      )}
+    </div>
   );
 }
