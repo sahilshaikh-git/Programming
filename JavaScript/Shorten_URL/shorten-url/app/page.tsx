@@ -7,6 +7,7 @@ export default function Home() {
   const [shortUrl, setShortUrl] = useState("");
   const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
+  const [ loading  ,  setLoading ] = useState(false);
 
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
@@ -60,8 +61,16 @@ export default function Home() {
     });
 
     const data = await response.json();
+    if (!response.ok) 
+        {
+          setError(data.error || "Failed to shorten URL");
+          return;
+        }
 
-    setShortUrl(shortCode);
+  setShortUrl(data.shortCode);
+  setCopied(false);
+
+
   }
 
   function copyUrl() {

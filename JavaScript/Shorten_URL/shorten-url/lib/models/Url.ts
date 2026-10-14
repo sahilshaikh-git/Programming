@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { unique } from "next/dist/build/utils";
 
 const urlSchema = new mongoose.Schema({
   originalUrl: {
@@ -9,6 +10,7 @@ const urlSchema = new mongoose.Schema({
   shortCode: {
     type: String,
     required: true,
+    unique : true ,
   },
 });
 

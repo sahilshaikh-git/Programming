@@ -8,9 +8,19 @@ export async function POST(request: Request) {
 
   await connectDB();
 
+  let uniqueCode = shortCode; 
+
+  while ( await Url.findOne ({ shortCode : uniqueCode})) {
+        uniqueCode =  Math.random().toString(36).substring(2,8) ;
+
+  }
+
+
+
+
   const newUrl = await Url.create({
     originalUrl,
-    shortCode,
+    shortCode : uniqueCode,
   });
 
   return Response.json(newUrl);
