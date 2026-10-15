@@ -1,0 +1,88 @@
+
+word_list = [
+    "apple", "banana", "orange", "grapes", "mango", "peach", "cherry", "lemon", "melon", "papaya",
+    "kiwi", "guava", "pear", "plum", "apricot", "coconut", "pineapple", "strawberry", "blueberry", "watermelon",
+    "car", "truck", "bus", "train", "plane", "boat", "bicycle", "scooter", "motorcycle", "tractor",
+    "road", "bridge", "tunnel", "station", "airport", "garage", "engine", "wheel", "brake", "helmet",
+    "house", "school", "college", "office", "garden", "kitchen", "bedroom", "bathroom", "window", "door",
+    "table", "chair", "sofa", "shelf", "drawer", "mirror", "pillow", "blanket", "curtain", "carpet",
+    "tiger", "lion", "zebra", "monkey", "rabbit", "elephant", "giraffe", "leopard", "cheetah", "panther",
+    "dog", "cat", "horse", "sheep", "goat", "camel", "donkey", "buffalo", "cow", "deer",
+    "eagle", "parrot", "pigeon", "sparrow", "peacock", "crow", "falcon", "owl", "duck", "swan",
+    "shark", "whale", "dolphin", "octopus", "jellyfish", "lobster", "crab", "shrimp", "salmon", "turtle",
+    "computer", "laptop", "keyboard", "monitor", "printer", "scanner", "speaker", "mouse", "camera", "tablet",
+    "phone", "charger", "battery", "cable", "router", "server", "browser", "website", "internet", "software",
+    "python", "java", "coding", "program", "function", "variable", "string", "integer", "boolean", "module",
+    "class", "object", "method", "syntax", "debug", "script", "compiler", "database", "network", "algorithm",
+    "happy", "sad", "angry", "excited", "nervous", "brave", "clever", "honest", "kind", "polite",
+    "strong", "gentle", "friendly", "curious", "creative", "active", "quiet", "patient", "helpful", "cheerful",
+    "morning", "evening", "night", "afternoon", "midnight", "sunrise", "sunset", "today", "tomorrow", "yesterday",
+    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "January", "February", "December",
+    "summer", "winter", "autumn", "spring", "season", "weather", "rain", "storm", "thunder", "lightning",
+    "cloud", "wind", "breeze", "snow", "frost", "sunshine", "rainbow", "sunlight", "shadow", "sunshine",
+    "mountain", "valley", "forest", "desert", "island", "ocean", "river", "stream", "waterfall", "volcano",
+    "village", "city", "country", "capital", "market", "museum", "library", "hospital", "theater", "stadium",
+    "doctor", "teacher", "student", "engineer", "farmer", "lawyer", "pilot", "artist", "writer", "chef",
+    "nurse", "driver", "scientist", "designer", "developer", "manager", "plumber", "carpenter", "soldier", "singer",
+    "cricket", "football", "hockey", "tennis", "badminton", "basketball", "volleyball", "baseball", "swimming", "running",
+    "jumping", "cycling", "boxing", "wrestling", "skating", "climbing", "dancing", "singing", "reading", "writing",
+    "pencil", "eraser", "notebook", "textbook", "marker", "crayon", "ruler", "compass", "sharpener", "backpack",
+    "lesson", "chapter", "subject", "science", "history", "geography", "grammar", "physics", "biology", "chemistry",
+    "breakfast", "lunch", "dinner", "snack", "sandwich", "burger", "pizza", "pasta", "noodles", "pancake",
+    "bread", "butter", "cheese", "yogurt", "cereal", "cookie", "biscuit", "chocolate", "popcorn", "cupcake",
+    "potato", "tomato", "onion", "carrot", "cabbage", "spinach", "broccoli", "cucumber", "pumpkin", "radish",
+    "garlic", "ginger", "pepper", "coriander", "cinnamon", "turmeric", "saffron", "mustard", "oregano", "vanilla",
+    "shirt", "trousers", "jacket", "sweater", "socks", "shoes", "sandals", "slippers", "gloves", "scarf",
+    "pocket", "button", "zipper", "collar", "sleeve", "uniform", "costume", "fashion", "cotton", "wool",
+    "family", "mother", "father", "sister", "brother", "uncle", "aunt", "cousin", "grandmother", "grandfather",
+    "friend", "neighbor", "partner", "visitor", "stranger", "community", "people", "person", "child", "adult",
+    "finger", "thumb", "shoulder", "elbow", "wrist", "ankle", "knee", "forehead", "eyebrow", "eyelash",
+    "stomach", "tongue", "tooth", "teeth", "muscle", "skeleton", "marrow", "kidney", "liver", "heart",
+    "planet", "galaxy", "universe", "comet", "asteroid", "meteor", "satellite", "telescope", "astronaut", "rocket",
+    "mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "gravity", "eclipse",
+    "diamond", "crystal", "silver", "copper", "bronze", "aluminum", "plastic", "rubber", "leather", "fabric",
+    "energy", "oxygen", "hydrogen", "nitrogen", "carbon", "element", "molecule", "particle", "electron", "neutron",
+    "puzzle", "riddle", "mystery", "treasure", "adventure", "journey", "explorer", "discovery", "challenge", "victory",
+    "castle", "palace", "temple", "church", "mosque", "monument", "fountain", "tower", "fortress", "statue",
+    "painter", "sculpture", "painting", "drawing", "portrait", "picture", "gallery", "museum", "canvas", "palette",
+    "guitar", "piano", "violin", "drums", "flute", "trumpet", "saxophone", "harmonica", "keyboard", "tambourine",
+    "melody", "rhythm", "concert", "orchestra", "musician", "composer", "harmony", "instrument", "microphone", "headphones",
+    "wallet", "purse", "ticket", "passport", "suitcase", "luggage", "bottle", "bucket", "basket", "package",
+    "clock", "watch", "calendar", "minute", "second", "hour", "week", "month", "decade", "century",
+    "forest", "jungle", "meadow", "prairie", "canyon", "glacier", "cave", "cliff", "coast", "harbor",
+    "grass", "flower", "petal", "branch", "trunk", "root", "seed", "plant", "shrub", "bamboo",
+    "insect", "butterfly", "mosquito", "dragonfly", "beetle", "spider", "scorpion", "ant", "bee", "wasp",
+    "whisper", "shout", "laugh", "smile", "dream", "think", "wonder", "imagine", "believe", "remember",
+    "travel", "explore", "discover", "create", "build", "repair", "design", "practice", "improve", "learn",
+    "beautiful", "wonderful", "amazing", "fantastic", "excellent", "delicious", "colorful", "powerful", "peaceful", "careful",
+    "quickly", "slowly", "brightly", "silently", "softly", "strongly", "clearly", "easily", "kindly", "safely",
+    "freedom", "respect", "courage", "wisdom", "knowledge", "success", "effort", "patience", "honesty", "kindness",
+    "problem", "solution", "question", "answer", "example", "practice", "project", "progress", "result", "purpose",
+    "holiday", "festival", "birthday", "wedding", "celebration", "ceremony", "tradition", "culture", "language", "history",
+    "diamond", "emerald", "ruby", "sapphire", "pearl", "jewel", "treasure", "golden", "precious", "shining",
+    "danger", "warning", "rescue", "safety", "shelter", "survival", "caution", "emergency", "accident", "disaster",
+    "pocket", "button", "ribbon", "thread", "needle", "scissors", "hammer", "wrench", "screwdriver", "ladder",
+    "mirror", "window", "ceiling", "floor", "wall", "roof", "chimney", "balcony", "staircase", "corridor",
+    "planet", "rocket", "comet", "meteor", "orbit", "cosmos", "starlight", "moonlight", "sunbeam", "daylight",
+    "journey", "highway", "traffic", "vehicle", "station", "platform", "passenger", "conductor", "railway", "airplane",
+    "village", "district", "province", "kingdom", "empire", "border", "region", "territory", "continent", "nation",
+    "language", "sentence", "paragraph", "spelling", "meaning", "dictionary", "vocabulary", "pronunciation", "conversation", "expression",
+    "football", "cricket", "player", "captain", "referee", "stadium", "tournament", "champion", "medal", "trophy",
+    "healthy", "fitness", "exercise", "training", "stretching", "balance", "strength", "stamina", "protein", "vitamin",
+    "computer", "program", "software", "hardware", "website", "browser", "internet", "database", "security", "password",
+    "function", "variable", "loop", "condition", "operator", "integer", "boolean", "module", "package", "debugging",
+    "keyboard", "monitor", "desktop", "laptop", "smartphone", "headset", "webcam", "microchip", "processor", "memory",
+    "planet", "animal", "nature", "forest", "ocean", "flower", "garden", "sunshine", "rainbow", "mountain"
+]
+
+
+logo = r"""
+ _   _    _    _   _  ____ __  __    _    _   _
+| | | |  / \  | \ | |/ ___|  \/  |  / \  | \ | |
+| |_| | / _ \ |  \| | |  _| |\/| | / _ \ |  \| |
+|  _  |/ ___ \| |\  | |_| | |  | |/ ___ \| |\  |
+|_| |_/_/   \_\_| \_|\____|_|  |_/_/   \_\_| \_|
+
+              THE HANGMAN GAME
+"""
+

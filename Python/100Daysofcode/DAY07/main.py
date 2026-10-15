@@ -19,3 +19,5 @@ for i in choice:
               print("Right")
        else :
               print("wrong")
+
+# print the number of dashes like the
