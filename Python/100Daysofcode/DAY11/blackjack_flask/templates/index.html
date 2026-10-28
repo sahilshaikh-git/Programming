@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Black Jack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <h1>Black Jack</h1>
+        <p class="tag">Beat the dealer</p>
+      </div>
+      <dl class="tally" aria-label="Your record">
+        <div><dd id="t-win">0</dd><dt>Won</dt></div>
+        <div><dd id="t-lose">0</dd><dt>Lost</dt></div>
+        <div><dd id="t-push">0</dd><dt>Push</dt></div>
+      </dl>
+    </header>
+  </div>
+
+  <main class="wrap">
+    <section class="hand" aria-label="Dealer's hand">
+      <div class="hand-head">
+        <h2 class="who">Dealer</h2>
+        <div class="score" id="d-score"></div>
+      </div>
+      <div class="cards" id="d-cards"></div>
+    </section>
+
+    <div class="status" id="status-band">
+      <p id="status" role="status" aria-live="polite">Dealing…</p>
+    </div>
+
+    <section class="hand" aria-label="Your hand">
+      <div class="hand-head">
+        <h2 class="who">You</h2>
+        <div class="score" id="p-score"></div>
+      </div>
+      <div class="cards" id="p-cards"></div>
+    </section>
+  </main>
+
+  <div class="bar">
+    <div class="bar-inner">
+      <div class="btns" id="play-btns">
+        <button class="btn primary" id="hit" type="button">Hit <kbd>H</kbd></button>
+        <button class="btn" id="stand" type="button">Stand <kbd>S</kbd></button>
+      </div>
+      <button class="btn primary" id="deal" type="button" hidden>Deal again <kbd>D</kbd></button>
+      <div class="foot">
+        <p>Dealer draws to 16 and stands on 17.</p>
+        <button class="link" id="reset" type="button">Reset record</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
