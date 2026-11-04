@@ -94,7 +94,9 @@ while machineoff :
            print("Preparing you drink !!")
            preference =MENU[choice]
            if transaction_successful(money_receives, preference["cost"]):
+               calculate_change(mon)
             # Step 1: Calculate change
+
 
             # Step 2: Print change
 
