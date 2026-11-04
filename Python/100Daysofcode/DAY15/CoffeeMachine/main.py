@@ -47,12 +47,11 @@ def Substract(order_ingredient) :
 def process_coin():
     total = 0
 
-
+    print("Insert the Values :")
     total +=  int(input("How many quarters  ? : "))*0.25
     total += int(input("How many dimes ? : "))*0.10
     total  +=int(input("How many nickels  ? : "))*0.05
     total +=int(input("How many pennies   ? : "))*0.01
-
 
     return total
 
@@ -61,24 +60,27 @@ def transaction_successful(money_received , drink_cost):
     """if money less than drink cost return false or return true """
 
     if money_received >= drink_cost :
+        change = 0 
+        change = money_received -drink_cost 
 
+        print(f"here is your change {round(change,2)}")
         return True
     
     else :
+        print("sorry You dont have enough money")
         return False
 
-# TODO 3 create coffee machine money change
-
-def calculate_change(money_received, drink_cost):
-    change = 0
-
-    if money_received > drink_cost:
-        change = money_received - drink_cost
-
-    return round(change, 2)
 
 # TODO : 1 . print report of all coffee resources
 machineoff = True
+
+def makecoffee(choice,order):
+    """Create the coffee and deducat from resouse"""
+    for item in order :
+        resources[item] -= order[item]
+
+    print(f"here is your {choice} ready :🍵🍵")
+    
 
 
 while machineoff :
@@ -90,25 +92,19 @@ while machineoff :
             print(f"Milk : {resources['milk']} ml")
             print(f"Coffee  : {resources['coffee']} gm")
             print(f"Money :  ${profit}")
-       else :
-           print("Preparing you drink !!")
+       else :   
            preference =MENU[choice]
-           if transaction_successful(money_receives, preference["cost"]):
-               calculate_change(mon)
-            # Step 1: Calculate change
-
-
-            # Step 2: Print change
-
-            # Step 3: Deduct ingredients
-
-            # Step 4: Add drink cost to profit
-
-            # Step 5: Print success message
-             # Print refund message
-
-           else :
+           if is_resource_sufficient( preference["ingredients"]):
+               payment = process_coin()
+               if transaction_successful(payment, preference["cost"]):
+                 makecoffee(choice, preference["ingredients"])
+                   
+                   
                
+               
+               
+         
+
 
 
                           
